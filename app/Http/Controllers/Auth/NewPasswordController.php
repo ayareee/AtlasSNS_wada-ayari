@@ -15,7 +15,7 @@ use Illuminate\View\View;
 class NewPasswordController extends Controller
 {
     /**
-     * Display the password reset view.
+     * Display the password reset view.（パスワードリセット画面を表示します）
      */
     public function create(Request $request): View
     {

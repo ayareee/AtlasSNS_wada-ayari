@@ -11,7 +11,7 @@ use Illuminate\View\View;
 class PasswordResetLinkController extends Controller
 {
     /**
-     * Display the password reset link request view.
+     * Display the password reset link request view.（パスワードリセットリンクを表示する）
      */
     public function create(): View
     {

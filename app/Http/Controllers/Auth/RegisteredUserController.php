@@ -30,13 +30,28 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+if($request->isMethod('post')) {
+
+    $request->validate([
+              'username' => 'required|unique:users,username|max:15',
+              'email' => 'required|unique:users,email',
+              'password' => 'required|unique:users,password|max:10',
+        ]);
+
+
+        $username = $request->input('username');
+        $mail = $request->input('mail');
+        $password = $request->input('password');
+
         User::create([
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
+        $request->session()->put('username',$username);
         return redirect('added');
+}
     }
 
     public function added(): View
