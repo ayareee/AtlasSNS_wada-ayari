@@ -6,7 +6,16 @@ body {}
 
 /* header */
 header {
+    padding: 10px;
     background: #186AC9;
+}
+
+img {
+    size: 60px 70px;
+}
+
+p {
+    color: #727272;
 }
 
 /* main content */
@@ -32,6 +41,14 @@ header {
 
 .nav-btn {
     position: relative;
+    display: flex;
+    font-size: 1.25rem;
+    padding: 10px;
+    padding-left: 10px;
+    width: 110px;
+    background-color: transparent;
+    color: #fff;
+
 }
 
 .nav-btn::after {
@@ -41,14 +58,14 @@ header {
     display: block;
     height: 8px;
     position: absolute;
-    right: 25px;
-    top: 38%;
+    right: 40px;
+    top: 3%;
     transform: rotate(135deg);
     transition: transform .3s ease-in-out, top .3s ease-in-out;
     width: 8px;
 }
 
 .nav-btn.open::after {
-    top: 45%;
+    display: flex;
     transform: rotate(-45deg);
 }

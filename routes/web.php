@@ -21,10 +21,10 @@ use Illuminate\Support\Facades\Route;
 require __DIR__ . '/auth.php';
 
 Route::get('top', [PostsController::class, 'index']);
+Route::post('top',[PostsController::class, 'index']);
 
 Route::get('profile', [ProfileController::class, 'profile']);
 
-Route::get('search', [UsersController::class, 'index']);
+Route::get('search', [UsersController::class, 'search']);
 
-Route::get('follow-list', [PostsController::class, 'index']);
-Route::get('follower-list', [PostsController::class, 'index']);
+Route::get('logout', [AuthenticatedSessionController::class, 'logout']);
