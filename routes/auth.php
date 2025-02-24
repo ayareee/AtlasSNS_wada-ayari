@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
 
+    Route::get('top', [PostsController::class, 'index']);
+    Route::post('top',[PostsController::class, 'index']);
+
     Route::get('login', [AuthenticatedSessionController::class, 'create']);
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
@@ -29,7 +32,6 @@ Route::middleware('guest')->group(function () {
     Route::get('follower-list', [FollowsController::class, 'followerList']);
     Route::post('follow/{userId}/destroy', [FollowsController::class, 'destroy']);
 
-    Route::get('logout', [AuthenticatedSessionController::class, 'logout']);
 
     Route::group(['middleware' => ['loginUserCheck']], function() {
   //ここに実行したい処理を記述だが、どのように記述すれば良いのか分からない…

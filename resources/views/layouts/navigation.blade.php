@@ -8,7 +8,7 @@
                 <ul class="nav-menu">
                     <li><a href="top">ホーム</a></li>
                     <li><a href="profile">プロフィール編集</a></li>
-                    <li><a href="logout">ログアウト</a></li>
+                    <li><a href="login">ログアウト</a></li>
                 </ul>
             </div>
         </div>

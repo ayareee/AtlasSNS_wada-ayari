@@ -36,7 +36,7 @@
     </div>
     <div id="side-bar">
       <div id="confirm">
-        <p>さんの</p>
+        <p>{{ session('username') }}さん</p>
         <div>
           <p>フォロー数</p>
           <p>〇〇名</p>
