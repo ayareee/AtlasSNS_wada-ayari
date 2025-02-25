@@ -3,9 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PostsController;
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\FollowsController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,8 +24,18 @@ require __DIR__ . '/auth.php';
 Route::get('top', [PostsController::class, 'index']);
 Route::post('top',[PostsController::class, 'index']);
 
+Route::get('login', [AuthenticatedSessionController::class, 'create']);
+Route::post('login', [AuthenticatedSessionController::class, 'store']);
+
 Route::get('profile', [ProfileController::class, 'profile']);
 
 Route::get('search', [UsersController::class, 'search']);
 
-Route::get('top', [AuthenticatedSessionController::class, 'login']);
+Route::get('logout', [AuthenticatedSessionController::class, 'logout']);
+Route::post('logout', [AuthenticatedSessionController::class, 'logout']);
+
+Route::get('follow-list', [FollowsController::class, 'followList']);
+Route::post('follow-list/{userId}', [FollowsController::class, 'store']);
+
+Route::get('follower-list', [FollowsController::class, 'followerList']);
+Route::post('follow/{userId}/destroy', [FollowsController::class, 'destroy']);

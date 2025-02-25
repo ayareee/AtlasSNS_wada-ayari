@@ -1,7 +1,7 @@
         <div id="head">
             <h1><a><a href="top"><img src="images/atlas.png"></a></h1>
             <div id="menu">
-                    <p>〇〇さん</p>
+                    <p>{{ session('username') }}さん</p>
                 </div>
                 <div class="accordion">
                 <p class="nav-btn"></p>

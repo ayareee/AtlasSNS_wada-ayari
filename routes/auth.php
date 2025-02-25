@@ -12,25 +12,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
 
-    Route::get('top', [PostsController::class, 'index']);
-    Route::post('top',[PostsController::class, 'index']);
-
-    Route::get('login', [AuthenticatedSessionController::class, 'create']);
-    Route::post('login', [AuthenticatedSessionController::class, 'store']);
+    Route::get('login', [RegisteredUserController::class, 'top']);
+    Route::post('login', [RegisteredUserController::class, 'top']);
 
     Route::get('register', [RegisteredUserController::class, 'create']);
     Route::post('register', [RegisteredUserController::class, 'store']);
+
 
     Route::get('added', [RegisteredUserController::class, 'added']);
     Route::post('added', [RegisteredUserController::class, 'added']);
 
     Route::get('top',[RegisteredUserController::class,'index']);
-
-    Route::get('follow-list', [FollowsController::class, 'followList']);
-    Route::post('follow-list/{userId}', [FollowsController::class, 'store']);
-
-    Route::get('follower-list', [FollowsController::class, 'followerList']);
-    Route::post('follow/{userId}/destroy', [FollowsController::class, 'destroy']);
 
 
     Route::group(['middleware' => ['loginUserCheck']], function() {
