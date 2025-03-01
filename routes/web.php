@@ -24,9 +24,6 @@ require __DIR__ . '/auth.php';
 Route::get('top', [PostsController::class, 'index']);
 Route::post('top',[PostsController::class, 'index']);
 
-Route::get('login', [AuthenticatedSessionController::class, 'create']);
-Route::post('login', [AuthenticatedSessionController::class, 'store']);
-
 Route::get('profile', [ProfileController::class, 'profile']);
 
 Route::get('search', [UsersController::class, 'search']);
